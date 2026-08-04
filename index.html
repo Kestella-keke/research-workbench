@@ -182,6 +182,14 @@
   .about code{background:var(--blue-soft);padding:1px 6px;border-radius:6px;color:var(--blue);}
   .banner{background:#fff7e8;border:1px solid #f3e2bf;color:#8a6d2f;border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:14px;display:flex;align-items:center;gap:8px;}
   .empty{text-align:center;color:var(--muted);padding:24px;font-size:14px;}
+  .field-filter{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px;}
+  .ff-label{font-size:13px;color:var(--muted);margin-right:2px;}
+  .chip{font-size:13px;padding:5px 12px;border:1px solid #e3e0d6;background:#fff;border-radius:18px;cursor:pointer;color:#555;transition:.15s;}
+  .chip:hover{border-color:#7aa7d4;color:#7aa7d4;}
+  .chip.active{background:#7aa7d4;border-color:#7aa7d4;color:#fff;}
+  .ff-input{flex:1;min-width:140px;font-size:13px;padding:6px 12px;border:1px solid #e3e0d6;border-radius:18px;outline:none;}
+  .ff-input:focus{border-color:#7aa7d4;}
+  .p-field{font-size:12px;color:#5a7da6;background:#e8f0f2;padding:2px 8px;border-radius:10px;margin-left:4px;}
   /* 弹窗 */
   .modal{position:fixed;inset:0;background:rgba(40,40,50,.45);display:none;z-index:50;align-items:center;justify-content:center;padding:18px;padding-bottom:calc(18px + env(safe-area-inset-bottom));}
   .modal.show{display:flex;}
@@ -410,13 +418,13 @@ const QUOTES=[
   {t:'心理学小知识',c:'「自我关怀」比自我批评更能维持长期动力。累了就承认累，这很正常。'},
   {t:'正能量',c:'你不需要每天都高效，只需要不放弃。'},
   {t:'心理学小知识',c:'「具身认知」：挺直腰背、走出去晒晒太阳，情绪会悄悄变好。'},
-  {t:'正能量',c:'一篇定量小文章，就是博士论文最好的铺垫。聚焦当下这件。'},
+  {t:'正能量',c:'一篇小文章，就是大论文最好的铺垫。聚焦当下这件。'},
   {t:'心理学小知识',c:'「完成偏见」：人更容易重视已做完的事。先完成、再完美。'},
   {t:'正能量',c:'跨专业的底色，恰恰是你独特的问题视角。'},
   {t:'心理学小知识',c:'「注意力残留」：切换任务后，前一件事仍占用脑力。一次只做一件，效率更高。'},
   {t:'正能量',c:'导师的杂活也是关系，科研是主线。两者都安排好，就不乱。'},
   {t:'心理学小知识',c:'「情绪标注」：给当下的感受命名（焦虑/疲惫/平静），焦虑感会明显下降。'},
-  {t:'正能量',c:'零基预算、成本绩效——你站在一个政策与实践都稀缺的切口上。'}
+  {t:'正能量',c:'你正站在一个政策与实践都稀缺的切口上，这种稀缺恰恰是你的机会。'}
 ];
 function seedIfNeeded(){
   if(meta.seeded)return;
@@ -424,22 +432,22 @@ function seedIfNeeded(){
   const od=dateStr(new Date(Date.now()-2*864e5));
   const y=dateStr(new Date(Date.now()-864e5));
   papers=[
-    {id:uid(),title:'成本预算绩效管理对地方政府支出效率的影响——基于DID的实证',journal:'财政研究',abstract:'本文以成本预算绩效管理试点为准自然实验，利用地级市面板数据评估其对支出效率的因果效应，并讨论异质性。',keywords:'成本预算绩效管理;支出效率;DID;财政透明度',tags:['新方法','新变量'],match:92,quality:'顶刊',reason:'紧贴导师大方向：成本预算绩效×支出效率，可直接复用 DID+地级市面板，对铺垫小文章最友好。',date:t,demo:true},
-    {id:uid(),title:'零基预算改革的政策扩散与执行偏差研究',journal:'公共管理学报',abstract:'基于政策创新扩散理论，刻画零基预算在地方层面的扩散路径，并识别执行中的偏差机制。',keywords:'零基预算;政策扩散;执行偏差',tags:['新热点','新趋势'],match:78,quality:'核心',reason:'零基预算是导师关键词之一，提供政策扩散视角，可与预算绩效影响研究形成对照。',date:t,demo:true}
+    {id:uid(),title:'【示例】数字化转型对组织绩效的影响——基于DID的实证',journal:'【某期刊】',abstract:'【示例摘要】以某政策/事件为准自然实验，利用面板数据评估其因果效应，并讨论异质性与机制。',keywords:'【关键词1】;【关键词2】;【关键词3】',tags:['新方法','新变量'],match:88,quality:'顶刊',reason:'【示例】说明这篇与你研究方向的契合点：方法可复用、变量可借鉴。',date:t,demo:true,field:'【某领域】'},
+    {id:uid(),title:'【示例】政策执行中的偏差机制与校正路径研究',journal:'【某期刊】',abstract:'【示例摘要】基于政策执行理论，刻画某政策在地方层面的落地偏差，识别关键影响因素。',keywords:'【关键词1】;政策执行;【关键词3】',tags:['新热点','新趋势'],match:75,quality:'核心',reason:'【示例】提供对比视角，可与你的主研究形成参照。',date:t,demo:true,field:'【某领域】'}
   ];
   topics=[
-    {id:uid(),title:'财政承受能力评估能否作为工具变量？',feasibility:'中：数据可得，但需论证外生性与相关性',note:'参考已发表的环境规制IV设计',demo:true}
+    {id:uid(),title:'【示例】某现象A对某结果B的影响机制？',feasibility:'【示例】中：数据可得，但需论证外生性与相关性',note:'参考已发表的相关IV/机制设计',demo:true}
   ];
   ftbz=[
-    {id:uid(),name:'量化小文章v1（预算绩效×支出效率）',version:1,progress:40,status:'撰写中',days:12,demo:true}
+    {id:uid(),name:'【示例】小论文v1（某方法×某变量）',version:1,progress:40,status:'撰写中',days:12,demo:true}
   ];
   todos=[
-    {id:uid(),name:'下载财政承受能力评估相关期刊文献',category:'科研',ddl:od,importance:'高',done:false,demo:true},
-    {id:uid(),name:'整理DID及其拓展方法笔记',category:'科研',ddl:t,importance:'中',done:false,demo:true},
-    {id:uid(),name:'回复甲方报告修改意见',category:'课题',ddl:t,importance:'高',done:false,demo:true}
+    {id:uid(),name:'【示例】整理某领域核心文献',category:'科研',ddl:od,importance:'高',done:false,demo:true},
+    {id:uid(),name:'【示例】整理某研究方法笔记',category:'科研',ddl:t,importance:'中',done:false,demo:true},
+    {id:uid(),name:'【示例】回复项目报告修改意见',category:'课题',ddl:t,importance:'高',done:false,demo:true}
   ];
   goals=[
-    {id:uid(),name:'每天阅读1篇顶刊论文',category:'科研',cycle:'每天',target:1,checkIns:[],demo:true}
+    {id:uid(),name:'每天阅读1篇【某领域】文献',category:'科研',cycle:'每天',target:1,checkIns:[],demo:true}
   ];
   mood[y]='一般';
   meta.seeded=true;meta.lastTopicGen=null;
@@ -549,6 +557,11 @@ function renderHome(){
 }
 
 /* ============ 科研热点 ============ */
+function setField(f){
+  meta.researchField=(f||'').trim()||'全部';
+  save('meta',meta);
+  renderResearch();
+}
 function renderResearch(){
   let html='';
   // 论文列表
@@ -556,7 +569,13 @@ function renderResearch(){
     +'<div class="right"><button class="btn sm ghost" onclick="reloadFeed()">恢复推荐论文</button>'
     +'<button class="icon-btn" title="新增" onclick="toggleForm(\'paperForm\')">'+ICON.plus+'</button>'
     +'<button class="icon-btn" title="选题库历史" onclick="showHistory(\'topicgen\')">'+ICON.clock+'</button></div></div>';
-  html+='<div class="feed-note">论文库每周自动从精选 feed 更新（仅含标题/期刊/摘要等公开信息，不含你的私人标注）。</div>';
+  html+='<div class="feed-note">论文库每周自动从精选 feed 更新（仅含标题/期刊/摘要等公开信息，不含你的私人标注）。可在下方选择你的研究方向，只显示相关论文。</div>';
+
+  const FIELDS=['全部','公共管理','经济学','社会学','政治学','数据科学','教育学','管理学'];
+  const curF=meta.researchField||'全部';
+  html+='<div class="field-filter"><span class="ff-label">研究方向</span>'
+    +FIELDS.map(f=>'<button class="chip'+(f===curF?' active':'')+'" onclick="setField(\''+f+'\')">'+f+'</button>').join('')
+    +'<input id="customField" class="ff-input" placeholder="或输入自定义领域…" value="'+((curF&&!FIELDS.includes(curF))?esc(curF):'')+'" onchange="setField(this.value)"></div>';
 
   html+='<div class="form-box" id="paperForm">'
     +'<div class="form-row"><label class="fld">中文标题<input id="p_title" placeholder="论文标题"></label>'
@@ -571,9 +590,15 @@ function renderResearch(){
     +'<button class="btn primary" onclick="addPaper()">保存论文</button>'
     +'</div>';
 
-  const active=papers.filter(p=>!p.ignored);
+  const curF=meta.researchField||'全部';
   const ignored=papers.filter(p=>p.ignored);
+  let active=papers.filter(p=>!p.ignored);
+  if(curF && curF!=='全部'){
+    const kw=curF.toLowerCase();
+    active=active.filter(p=>((p.field||'')+' '+(p.title||'')+' '+(p.keywords||'')+' '+(p.abstract||'')).toLowerCase().includes(kw));
+  }
   if(active.length===0 && ignored.length===0)html+='<div class="empty">还没有论文。点右上角「恢复推荐论文」可一键载入每周精选；或点 ＋ 手动添加。</div>';
+  else if(active.length===0)html+='<div class="empty">当前研究方向「'+esc(curF)+'」下暂无论文。点「恢复推荐论文」载入更多，或切换研究方向。</div>';
   else active.slice().reverse().forEach(p=>{
     html+=renderPaperCard(p,false);
   });
@@ -645,7 +670,7 @@ function renderPaperCard(p,isIgnored){
   return '<div class="card paper'+(isIgnored?' ignored':'')+'">'
     +'<div class="p-title">'+esc(p.title)+'</div>'
     +'<div class="p-meta">'
-    +'<span class="p-journal">'+esc(p.journal)+'</span>'
+    +'<span class="p-journal">'+esc(p.journal)+'</span>'+(p.field?'<span class="p-field">'+esc(p.field)+'</span>':'')
     +(p.seed?'<span class="p-feed">feed</span>':'')
     +(p.quality?'<span class="quality-pill q-'+qualityClass(p.quality)+'">'+esc(p.quality)+'</span>':'')
     +(p.match!=null?'<span><span class="match-bar"><span class="match-fill" style="width:'+p.match+'%"></span></span><span class="match-num">'+p.match+'%</span></span>':'')
@@ -1192,14 +1217,14 @@ function downloadBlob(name,content,type){
 function downloadMD(name,content){downloadBlob(name,content,'text/markdown');}
 
 /* ============ 论文 feed（方案B：每周自动更新；内置兜底，离线/本地打开也能恢复） ============ */
-const FALLBACK_FEED = {"updated": "2026-08-03", "note": "精选 feed：覆盖成本预算绩效管理、零基预算、政府绩效管理、财政承受能力等方向，每周刷新。每篇已附加来源质量、匹配度与推荐理由，不含你的私人标注。", "papers": [{"id": "feed-1", "title": "零基预算改革的财政效应评估：基于地市级面板数据的准实验研究", "journal": "财政研究", "abstract": "以新一轮零基预算改革试点为准自然实验，利用地市级面板数据评估其对财政支出规模与结构优化的因果效应，并讨论区域异质性。", "keywords": "零基预算;财政支出;准实验;异质性", "tags": ["新热点", "新趋势"], "date": "2026-08-01", "quality": "权威", "reason": "零基预算是导师大方向关键词之一，准实验设计可直接参考，适合作为预算绩效改革的对比情境。", "match": 82}, {"id": "feed-2", "title": "成本预算绩效管理能否提升公共服务供给效率？——机制与异质性分析", "journal": "公共管理学报", "abstract": "构建成本预算绩效管理与公共服务效率的理论框架，利用多期 DID 识别其因果效应，并从中介效应角度验证财政透明度的传导作用。", "keywords": "成本预算绩效管理;公共服务效率;DID;财政透明度", "tags": ["新方法", "新变量"], "date": "2026-07-31", "quality": "核心", "reason": "核心自变量正是你的博士关键词「成本预算绩效管理」，DID+中介效应可复现，匹配度极高。", "match": 90}, {"id": "feed-3", "title": "财政承受能力评估在专项债风险管控中的嵌入路径", "journal": "财经研究", "abstract": "将财政承受能力评估引入地方政府专项债额度测算，提出“红黄绿”分级阈值，并用省级数据验证其对债务风险收敛的效果。", "keywords": "财政承受能力;专项债;债务风险;阈值", "tags": ["新变量", "新热点"], "date": "2026-07-30", "quality": "核心", "reason": "财政承受能力评估是 X 对 Y 影响研究中常见的约束变量/工具变量候选，值得精读。", "match": 90}, {"id": "feed-4", "title": "预算绩效管理中的“成本—效益”核算框架构建", "journal": "财政科学", "abstract": "梳理国际成本效益分析（CBA）在公共预算中的演进，提出适配中国预算绩效管理语境的核算科目与折现口径建议。", "keywords": "成本效益分析;预算绩效;核算框架", "tags": ["新方法", "新理论"], "date": "2026-07-29", "quality": "核心", "reason": "提供成本效益分析的核算框架，可作为方法论文献，支撑变量测度设计。", "match": 78}, {"id": "feed-5", "title": "政策执行视角下零基预算的地方落地偏差与校正", "journal": "公共管理评论", "abstract": "基于政策执行理论，刻画零基预算在市县层面的“象征性执行”偏差，识别财政压力与激励机制的交互作用。", "keywords": "零基预算;政策执行;执行偏差;激励机制", "tags": ["新热点", "新趋势"], "date": "2026-07-28", "quality": "核心", "reason": "政策执行偏差视角能帮你理解零基预算在地方层面的「落地变形」机制。", "match": 82}, {"id": "feed-6", "title": "数字政府建设对预算绩效透明度的溢出效应", "journal": "管理世界", "abstract": "利用“互联网+政务服务”试点作为外生冲击，实证检验数字政府建设如何提升预算绩效信息披露水平与公众监督。", "keywords": "数字政府;预算透明;信息披露;溢出效应", "tags": ["新变量", "新方法"], "date": "2026-08-02", "quality": "顶刊", "reason": "数字政府与预算透明度可作为调节变量或机制变量，拓展你主研究的边界条件。", "match": 78}, {"id": "feed-7", "title": "转移支付与地方政府支出绩效：基于绩效预算的视角", "journal": "经济研究", "abstract": "从绩效预算改革切入，分析一般性转移支付对地方支出效率的激励相容效应，并讨论配套问责机制的调节作用。", "keywords": "转移支付;支出绩效;绩效预算;问责", "tags": ["新趋势", "新理论"], "date": "2026-07-30", "quality": "顶刊", "reason": "转移支付×支出绩效的视角，可借鉴其绩效预算问责机制设计。", "match": 78}, {"id": "feed-8", "title": "预算绩效问责对官员激励的影响——来自 A 省的田野与实证", "journal": "经济学动态", "abstract": "结合 A 省绩效问责办法的实施，用双重差分识别问责强度变化对部门预算编制谨慎度与项目完成率的影响。", "keywords": "绩效问责;官员激励;DID;预算编制", "tags": ["新变量", "新方法"], "date": "2026-07-29", "quality": "权威", "reason": "绩效问责对官员激励的影响，为你的 Y（政府治理/创新）提供微观机制参考。", "match": 78}, {"id": "feed-9", "title": "成本效益分析在政府采购中的嵌入研究", "journal": "中国行政管理", "abstract": "探讨将成本效益分析前置到政府采购需求评审环节的可行性，构建节资率与绩效达标率的双维评估指标。", "keywords": "成本效益分析;政府采购;需求评审;绩效", "tags": ["新方法", "新热点"], "date": "2026-08-01", "quality": "权威", "reason": "政府采购场景的成本效益分析，可与你的支出效率结果相互印证。", "match": 62}, {"id": "feed-10", "title": "政府绩效预算改革的国际经验与中国路径选择", "journal": "经济学季刊", "abstract": "比较 OECD 国家绩效预算模式的制度逻辑，提炼对中国“成本预算绩效管理”改革的借鉴，强调立法约束与数据底座。", "keywords": "绩效预算;国际比较;成本预算绩效管理;制度逻辑", "tags": ["新趋势", "新理论"], "date": "2026-07-28", "quality": "顶刊", "reason": "国际比较+制度逻辑，适合在引言和文献综述部分建立中国情境的研究缺口。", "match": 90}]};
+const FALLBACK_FEED = {"updated": "2026-08-04", "note": "精选 feed（示例占位）：覆盖公共管理、经济学、社会学、政治学、数据科学、教育学、管理学等多领域，每篇标注研究方向（field）。点「恢复推荐论文」可载入；在上方选择你的研究方向可筛选。真实论文由每周自动更新推送。", "papers": [{"id": "feed-1", "title": "【示例】数字政府建设对公共服务效率的影响——基于多期DID的实证", "journal": "【某期刊】", "abstract": "【示例摘要】以数字政府试点为准自然实验，评估其对公共服务效率的因果效应，并讨论异质性。", "keywords": "数字政府;公共服务效率;DID;异质性", "tags": ["新方法", "新变量"], "date": "2026-08-01", "quality": "顶刊", "reason": "【示例】方法可复用、变量可借鉴，适配你的研究方向。", "match": 85, "field": "公共管理"}, {"id": "feed-2", "title": "【示例】平台算法歧视的经济学分析：机制与规制", "journal": "【某期刊】", "abstract": "【示例摘要】构建算法歧视的理论框架，用实验/计量识别其经济后果，提出规制路径。", "keywords": "算法歧视;平台经济;规制;实验", "tags": ["新热点", "新变量"], "date": "2026-07-31", "quality": "权威", "reason": "【示例】提供机制分析与规制视角，可作对照。", "match": 80, "field": "经济学"}, {"id": "feed-3", "title": "【示例】社区韧性与居民福祉：一个社会网络视角", "journal": "【某期刊】", "abstract": "【示例摘要】基于社会网络分析，刻画社区韧性对居民主观福祉的影响及中介机制。", "keywords": "社区韧性;主观福祉;社会网络;中介效应", "tags": ["新变量", "新方法"], "date": "2026-07-30", "quality": "核心", "reason": "【示例】社会网络方法可迁移到你的研究设计。", "match": 76, "field": "社会学"}, {"id": "feed-4", "title": "【示例】政策议程设置中的媒体注意力分配研究", "journal": "【某期刊】", "abstract": "【示例摘要】基于注意力基础观，分析媒体如何塑造政策议程，识别关键触发机制。", "keywords": "政策议程;媒体注意力;议程设置", "tags": ["新热点", "新趋势"], "date": "2026-07-29", "quality": "核心", "reason": "【示例】提供政策过程视角。", "match": 74, "field": "政治学"}, {"id": "feed-5", "title": "【示例】大模型辅助因果推断：方法边界与验证", "journal": "【某期刊】", "abstract": "【示例摘要】评估大模型在因果推断中的辅助能力，给出验证框架与失效边界。", "keywords": "大模型;因果推断;方法验证;AI for Science", "tags": ["新方法", "新趋势"], "date": "2026-08-02", "quality": "顶刊", "reason": "【示例】前沿方法，可关注其对你数据处理的启发。", "match": 82, "field": "数据科学"}, {"id": "feed-6", "title": "【示例】在线学习投入的影响因素与干预实验", "journal": "【某期刊】", "abstract": "【示例摘要】用随机实验识别在线学习投入的关键影响因素，评估干预效果。", "keywords": "在线学习;学习投入;随机实验;干预", "tags": ["新方法", "新变量"], "date": "2026-07-28", "quality": "核心", "reason": "【示例】实验设计范式可借鉴。", "match": 73, "field": "教育学"}, {"id": "feed-7", "title": "【示例】组织韧性对绩效波动的缓冲作用：跨层研究", "journal": "【某期刊】", "abstract": "【示例摘要】从跨层视角检验组织韧性如何缓冲外部环境冲击对绩效的影响。", "keywords": "组织韧性;绩效波动;跨层模型;缓冲", "tags": ["新变量", "新热点"], "date": "2026-07-27", "quality": "权威", "reason": "【示例】跨层模型设计可参考。", "match": 75, "field": "管理学"}, {"id": "feed-8", "title": "【示例】绿色技术创新的空间溢出与区域协同", "journal": "【某期刊】", "abstract": "【示例摘要】用空间计量识别绿色技术创新的溢出效应，讨论区域协同机制。", "keywords": "绿色技术;空间溢出;区域协同;空间计量", "tags": ["新方法", "新热点"], "date": "2026-07-26", "quality": "核心", "reason": "【示例】空间计量方法可迁移。", "match": 78, "field": "经济学"}, {"id": "feed-9", "title": "【示例】基层治理数字化转型的适应性治理框架", "journal": "【某期刊】", "abstract": "【示例摘要】提出基层治理数字化转型的适应性治理框架，结合案例提炼原则。", "keywords": "基层治理;数字化转型;适应性治理", "tags": ["新理论", "新趋势"], "date": "2026-07-25", "quality": "核心", "reason": "【示例】治理框架构建思路可参考。", "match": 77, "field": "公共管理"}, {"id": "feed-10", "title": "【示例】社会资本对公共卫生行为的影响：准实验证据", "journal": "【某期刊】", "abstract": "【示例摘要】以某公共卫生政策为准自然实验，评估社会资本对健康行为的作用。", "keywords": "社会资本;公共卫生;健康行为;准实验", "tags": ["新变量", "新方法"], "date": "2026-07-24", "quality": "权威", "reason": "【示例】准实验设计可复现。", "match": 76, "field": "社会学"}]};
 function applyFeed(j,force,src){
   if(!j||!Array.isArray(j.papers))return;
   let added=0,updated=0;
   j.papers.forEach(p=>{
     if(!p||!p.id)return;
     const idx=papers.findIndex(x=>x.id===p.id);
-    if(idx===-1){ papers.push(Object.assign({seed:true},p)); added++; }
+    if(idx===-1){ papers.push(Object.assign({seed:true,field:p.field||'通用'},p)); added++; }
     else if(papers[idx].seed){
       const keep={intensive:papers[idx].intensive};
       keep.ignored= force ? false : (papers[idx].ignored||false);
