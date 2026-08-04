@@ -1,166 +1,232 @@
 {
   "updated": "2026-08-04",
-  "note": "精选 feed（示例占位）：覆盖公共管理、经济学、社会学、政治学、数据科学、教育学、管理学等多领域，每篇标注研究方向（field）。点「恢复推荐论文」可载入；在上方选择你的研究方向可筛选。真实论文由每周自动更新推送。",
+  "note": "本周自动抓取的真实论文（来源 IMF/Sprger/Frontiers/IEEE/Governance/中国财经报等），覆盖公共管理、经济学、政治学、社会学、数据科学、教育学、管理学多领域，每篇标注研究方向（field）。点「恢复推荐论文」可载入；在上方选择你的研究方向可筛选。后续将由每周自动化持续更新。",
   "papers": [
     {
-      "id": "feed-1",
-      "title": "【示例】数字政府建设对公共服务效率的影响——基于多期DID的实证",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】以数字政府试点为准自然实验，评估其对公共服务效率的因果效应，并讨论异质性。",
-      "keywords": "数字政府;公共服务效率;DID;异质性",
-      "tags": [
-        "新方法",
-        "新变量"
-      ],
-      "date": "2026-08-01",
-      "quality": "顶刊",
-      "reason": "【示例】方法可复用、变量可借鉴，适配你的研究方向。",
-      "match": 85,
-      "field": "公共管理"
-    },
-    {
-      "id": "feed-2",
-      "title": "【示例】平台算法歧视的经济学分析：机制与规制",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】构建算法歧视的理论框架，用实验/计量识别其经济后果，提出规制路径。",
-      "keywords": "算法歧视;平台经济;规制;实验",
-      "tags": [
-        "新热点",
-        "新变量"
-      ],
-      "date": "2026-07-31",
-      "quality": "权威",
-      "reason": "【示例】提供机制分析与规制视角，可作对照。",
-      "match": 80,
-      "field": "经济学"
-    },
-    {
-      "id": "feed-3",
-      "title": "【示例】社区韧性与居民福祉：一个社会网络视角",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】基于社会网络分析，刻画社区韧性对居民主观福祉的影响及中介机制。",
-      "keywords": "社区韧性;主观福祉;社会网络;中介效应",
-      "tags": [
-        "新变量",
-        "新方法"
-      ],
-      "date": "2026-07-30",
-      "quality": "核心",
-      "reason": "【示例】社会网络方法可迁移到你的研究设计。",
-      "match": 76,
-      "field": "社会学"
-    },
-    {
-      "id": "feed-4",
-      "title": "【示例】政策议程设置中的媒体注意力分配研究",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】基于注意力基础观，分析媒体如何塑造政策议程，识别关键触发机制。",
-      "keywords": "政策议程;媒体注意力;议程设置",
+      "id": "feed-2026W32-01",
+      "title": "“十五五”时期锚定财政科学管理的着力点",
+      "journal": "中国财经报（智库要论）",
+      "authors": "马海涛",
+      "abstract": "拓展财政资金投入方式，深化零基预算改革、硬化预算约束；健全全过程预算绩效管理，全面提升财政资金使用效益；理顺政府间财政关系，完善转移支付促进区域协调与基本公共服务均等化。",
+      "keywords": "财政科学管理;零基预算;预算绩效;转移支付",
       "tags": [
         "新热点",
         "新趋势"
       ],
-      "date": "2026-07-29",
+      "date": "2026-07-01",
+      "quality": "权威",
+      "match": 95,
+      "reason": "直接覆盖你的核心方向：零基预算改革+全过程预算绩效管理+财政科学管理，是“十五五”财政研究的总纲式文献。",
+      "field": "公共管理"
+    },
+    {
+      "id": "feed-2026W32-02",
+      "title": "深化零基预算改革提升预算治理效能",
+      "journal": "中国财政科学研究院",
+      "authors": "赵福昌",
+      "abstract": "从优化业财协同治理关系、上下联动形成改革合力、统筹提升资金绩效三方面，总结零基预算改革的地方实践，提出深化改革的着力点，强调财政可承受能力评估与防范超财政能力支出风险。",
+      "keywords": "零基预算;预算治理;业财协同;财政承受能力评估",
+      "tags": [
+        "新热点",
+        "新趋势"
+      ],
+      "date": "2026-04-15",
+      "quality": "权威",
+      "match": 92,
+      "reason": "紧扣零基预算改革与财政承受能力评估，是你博士论文可直接对话的政策实践脉络。",
+      "field": "公共管理"
+    },
+    {
+      "id": "feed-2026W32-03",
+      "title": "深化改革提质效 科学理财强治理——多地零基预算改革实践探索与成效综述",
+      "journal": "中国财经报",
+      "authors": "《中国财经报》综述",
+      "abstract": "系统梳理浙江、安徽、内蒙古、湖北、陕西、宁夏等地零基预算改革实践，总结“破基数、立标准、强统筹、硬绩效”的经验：支出标准体系从“控盘子”走向“控标准”，绩效管理贯穿预算全流程。",
+      "keywords": "零基预算;支出标准;绩效闭环;财政统筹",
+      "tags": [
+        "新趋势"
+      ],
+      "date": "2026-05-30",
       "quality": "核心",
-      "reason": "【示例】提供政策过程视角。",
-      "match": 74,
+      "match": 88,
+      "reason": "多省份改革案例汇编，适合作为你做实证研究制度背景与异质性分析的一手素材。",
+      "field": "公共管理"
+    },
+    {
+      "id": "feed-2026W32-04",
+      "title": "AI Meets Fiscal Policy: Mapping Government Spending Actions Across 64 Countries",
+      "journal": "IMF Working Paper No. 2026/043",
+      "authors": "Shuvam Das; Davide Furceri; Nikhil Patel; Adrian Peralta",
+      "abstract": "利用跨国数据刻画各国政府支出行动，探讨人工智能时代财政政策的新特征与传导机制，为财政乘数、财政立场的跨国比较提供新证据。",
+      "keywords": "fiscal policy;government spending;AI;cross-country",
+      "tags": [
+        "新方法"
+      ],
+      "date": "2026-03-06",
+      "quality": "权威",
+      "match": 75,
+      "reason": "IMF 工作论文，把 AI 与财政政策结合，方法论（跨国面板/向量自回归）对你的定量研究有借鉴价值。",
+      "field": "经济学"
+    },
+    {
+      "id": "feed-2026W32-05",
+      "title": "How does China's local fiscal decentralization promote common prosperity? An analysis of the mediating role of rural revitalization",
+      "journal": "Economics of Governance",
+      "authors": "Ziqiao Shu; Sanghyeon Ju",
+      "abstract": "考察中国地方财政分权通过乡村振兴的中介作用促进共同富裕的机制，使用省级面板数据识别财政分权与城乡均衡发展的因果关联。",
+      "keywords": "fiscal decentralization;common prosperity;rural revitalization;China",
+      "tags": [
+        "新方法"
+      ],
+      "date": "2026-02-16",
+      "quality": "核心",
+      "match": 82,
+      "reason": "中国地方财政分权主题，与你“财政—治理”方向高度相关，可参考其机制识别与中介效应设计。",
+      "field": "经济学"
+    },
+    {
+      "id": "feed-2026W32-06",
+      "title": "Are fiscal multipliers state-dependent? Insights from an agent-based model",
+      "journal": "Journal of Evolutionary Economics",
+      "authors": "Marco Amendola; Marcelo C. Pereira",
+      "abstract": "基于主体模型（ABM）探讨财政乘数是否依赖于经济状态，揭示不同周期下政府支出冲击的异质性宏观效应。",
+      "keywords": "fiscal multipliers;agent-based model;state-dependent;macro",
+      "tags": [
+        "新方法"
+      ],
+      "date": "2026-02-07",
+      "quality": "核心",
+      "match": 70,
+      "reason": "财政乘数方法学文献，可对照你论文中可能用到的 DSGE/ABM 与实证乘数估计。",
+      "field": "经济学"
+    },
+    {
+      "id": "feed-2026W32-07",
+      "title": "Reframing robustness, reclaiming politics: a constructivist reappraisal of robust governance in turbulent times",
+      "journal": "Critical Policy Studies (Vol.20, No.1, pp.158-164)",
+      "authors": "Andreas Hagedorn Krogh; Christian Lo",
+      "abstract": "从建构主义视角重审“稳健治理”理论，指出其将湍流实在化、去政治化的预设，主张把治理稳健性放回问题框定与权力政治的分析中。",
+      "keywords": "robust governance;turbulence;constructivism;policy discourse",
+      "tags": [
+        "新理论"
+      ],
+      "date": "2026-01-01",
+      "quality": "核心",
+      "match": 55,
+      "reason": "治理理论前沿，可为你探讨“财政可持续治理”提供理论对话框架。",
       "field": "政治学"
     },
     {
-      "id": "feed-5",
-      "title": "【示例】大模型辅助因果推断：方法边界与验证",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】评估大模型在因果推断中的辅助能力，给出验证框架与失效边界。",
-      "keywords": "大模型;因果推断;方法验证;AI for Science",
+      "id": "feed-2026W32-08",
+      "title": "Governing Without Guarantees: Complexity, Digital Infrastructure, and Institutional Responsibility",
+      "journal": "Indian Public Policy Review (7(2):21-43)",
+      "authors": "Bibhu Prasad Mohapatra",
+      "abstract": "提出“无保证治理（GWG）”概念与责任保留能力（RRC）框架，以数字公共基础设施案例说明技术系统如何再分配问责并遮蔽伤害。",
+      "keywords": "institutional responsibility;complexity;digital infrastructure;accountability",
       "tags": [
-        "新方法",
-        "新趋势"
+        "新理论"
       ],
-      "date": "2026-08-02",
-      "quality": "顶刊",
-      "reason": "【示例】前沿方法，可关注其对你数据处理的启发。",
-      "match": 82,
+      "date": "2026-05-24",
+      "quality": "开放获取",
+      "match": 50,
+      "reason": "数字治理与问责理论，可为“财政数字化/智能评审工具”等治理议题提供分析视角。",
+      "field": "政治学"
+    },
+    {
+      "id": "feed-2026W32-09",
+      "title": "Clientelism in the reform era of Indonesia's democracy",
+      "journal": "Frontiers in Political Science (Comparative Governance)",
+      "authors": "Leo Agustino; M. Dian Hikmawan",
+      "abstract": "分析印尼改革时代民主中的庇护主义，探讨选举竞争、地方政治与国家治理质量的互动关系。",
+      "keywords": "clientelism;Indonesia;democratic reform;governance quality",
+      "tags": [
+        "新热点"
+      ],
+      "date": "2026-03-04",
+      "quality": "开放获取",
+      "match": 40,
+      "reason": "比较治理视角的实证案例，可借鉴其因果识别思路用于中国地方治理研究。",
+      "field": "社会学"
+    },
+    {
+      "id": "feed-2026W32-10",
+      "title": "Fine-grained causal effect estimation of learning resources via dynamic causal heterogeneous graph neural networks",
+      "journal": "Scientific Reports (16(1):4412)",
+      "authors": "Yuan Ren; Zhanfang Chen; Xiaoming Jiang; Zeming Du",
+      "abstract": "提出动态因果异质图神经网络（DCHGNN），结合图表示学习与双重稳健估计，在线教育场景下精细估计学习资源的因果效应并缓解选择偏差。",
+      "keywords": "causal inference;GNN;heterogeneous graph;doubly robust;education",
+      "tags": [
+        "新方法"
+      ],
+      "date": "2026-01-01",
+      "quality": "开放获取",
+      "match": 58,
+      "reason": "因果推断+图神经网络的方法创新，对你处理面板/政策评估中的混杂偏倚有方法启发。",
       "field": "数据科学"
     },
     {
-      "id": "feed-6",
-      "title": "【示例】在线学习投入的影响因素与干预实验",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】用随机实验识别在线学习投入的关键影响因素，评估干预效果。",
-      "keywords": "在线学习;学习投入;随机实验;干预",
+      "id": "feed-2026W32-11",
+      "title": "From Prediction to Prescription: A Causal-AI for Personalized Learning Path Optimization in MOOCs",
+      "journal": "IEEE Access (Vol.14, pp.29105-29118)",
+      "authors": "Chukwuemeka Paul Isiwu; Leonard Chukwualuka Nnadi; Yutaka Watanobe",
+      "abstract": "将 uplift modeling 与 Actor-Critic 强化学习结合，从预测走向处方，为 MOOC 学习者生成因果驱动的自适应干预策略。",
+      "keywords": "causal inference;reinforcement learning;prescriptive analytics;MOOCs",
       "tags": [
-        "新方法",
-        "新变量"
+        "新方法"
       ],
-      "date": "2026-07-28",
-      "quality": "核心",
-      "reason": "【示例】实验设计范式可借鉴。",
-      "match": 73,
+      "date": "2026-01-01",
+      "quality": "开放获取",
+      "match": 55,
+      "reason": "因果-AI 与强化学习的前沿方法，可迁移到你研究中的政策效应异质性与最优干预设计。",
+      "field": "数据科学"
+    },
+    {
+      "id": "feed-2026W32-12",
+      "title": "Inference and Causal Machine Learning in Educational Data Science: A Literature Review",
+      "journal": "RE@D - Revista de Educação a Distância e ELearning (9(1):e202605)",
+      "authors": "Nuno de Castro Lopes",
+      "abstract": "综述经典因果推断方法（PSM、RD、DID、合成控制）与因果机器学习（CML）技术（Meta-learners、Causal Tree/Forest），强调其对教育干预效应评估的潜力。",
+      "keywords": "education data science;causal inference;causal machine learning;heterogeneous treatment effects",
+      "tags": [
+        "新热点"
+      ],
+      "date": "2026-05-12",
+      "quality": "开放获取",
+      "match": 60,
+      "reason": "DID/合成控制等方法的系统综述，正是你实证章节的方法论基础，值得精读。",
       "field": "教育学"
     },
     {
-      "id": "feed-7",
-      "title": "【示例】组织韧性对绩效波动的缓冲作用：跨层研究",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】从跨层视角检验组织韧性如何缓冲外部环境冲击对绩效的影响。",
-      "keywords": "组织韧性;绩效波动;跨层模型;缓冲",
+      "id": "feed-2026W32-13",
+      "title": "Causal discovery for automated real-world educational evidence extraction",
+      "journal": "Research and Practice in Technology Enhanced Learning (21:20)",
+      "authors": "K. Okumura; K. Nishioka; K. Koike; I. Horikoshi; H. Ogata",
+      "abstract": "将深度学习用于真实世界教育数据的因果发现（SAM 及改进 SAM+），从自然发生数据中生成可解释且新颖的因果假设，推动循证教育。",
+      "keywords": "causal discovery;real-world evidence;evidence-based education;SAM",
       "tags": [
-        "新变量",
-        "新热点"
-      ],
-      "date": "2026-07-27",
-      "quality": "权威",
-      "reason": "【示例】跨层模型设计可参考。",
-      "match": 75,
-      "field": "管理学"
-    },
-    {
-      "id": "feed-8",
-      "title": "【示例】绿色技术创新的空间溢出与区域协同",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】用空间计量识别绿色技术创新的溢出效应，讨论区域协同机制。",
-      "keywords": "绿色技术;空间溢出;区域协同;空间计量",
-      "tags": [
-        "新方法",
-        "新热点"
-      ],
-      "date": "2026-07-26",
-      "quality": "核心",
-      "reason": "【示例】空间计量方法可迁移。",
-      "match": 78,
-      "field": "经济学"
-    },
-    {
-      "id": "feed-9",
-      "title": "【示例】基层治理数字化转型的适应性治理框架",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】提出基层治理数字化转型的适应性治理框架，结合案例提炼原则。",
-      "keywords": "基层治理;数字化转型;适应性治理",
-      "tags": [
-        "新理论",
-        "新趋势"
-      ],
-      "date": "2026-07-25",
-      "quality": "核心",
-      "reason": "【示例】治理框架构建思路可参考。",
-      "match": 77,
-      "field": "公共管理"
-    },
-    {
-      "id": "feed-10",
-      "title": "【示例】社会资本对公共卫生行为的影响：准实验证据",
-      "journal": "【某期刊】",
-      "abstract": "【示例摘要】以某公共卫生政策为准自然实验，评估社会资本对健康行为的作用。",
-      "keywords": "社会资本;公共卫生;健康行为;准实验",
-      "tags": [
-        "新变量",
         "新方法"
       ],
-      "date": "2026-07-24",
-      "quality": "权威",
-      "reason": "【示例】准实验设计可复现。",
-      "match": 76,
-      "field": "社会学"
+      "date": "2026-01-01",
+      "quality": "开放获取",
+      "match": 52,
+      "reason": "因果发现方法，可启发你在缺乏随机实验时从观测数据识别政策因果结构。",
+      "field": "教育学"
+    },
+    {
+      "id": "feed-2026W32-14",
+      "title": "Breaking Out of Low-Effort Traps: Bureaucratic Leadership by Persuasion",
+      "journal": "Governance",
+      "authors": "Martin Haus",
+      "abstract": "探讨官僚组织中领导者如何通过说服而非命令突破低努力均衡，分析激励机制、组织文化与领导行为对政策执行质量的影响。",
+      "keywords": "bureaucratic leadership;persuasion;public administration;implementation",
+      "tags": [
+        "新理论"
+      ],
+      "date": "2026-07-19",
+      "quality": "核心",
+      "match": 45,
+      "reason": "公共管理/组织行为交叉，可为你分析财政改革落地中的基层执行阻力提供理论切口。",
+      "field": "管理学"
     }
   ]
 }
