@@ -590,15 +590,15 @@ function renderResearch(){
     +'<button class="btn primary" onclick="addPaper()">保存论文</button>'
     +'</div>';
 
-  const curF=meta.researchField||'全部';
+  const curF2=meta.researchField||'全部';
   const ignored=papers.filter(p=>p.ignored);
   let active=papers.filter(p=>!p.ignored);
-  if(curF && curF!=='全部'){
-    const kw=curF.toLowerCase();
+  if(curF2 && curF2!=='全部'){
+    const kw=curF2.toLowerCase();
     active=active.filter(p=>((p.field||'')+' '+(p.title||'')+' '+(p.keywords||'')+' '+(p.abstract||'')).toLowerCase().includes(kw));
   }
   if(active.length===0 && ignored.length===0)html+='<div class="empty">还没有论文。点右上角「恢复推荐论文」可一键载入每周精选；或点 ＋ 手动添加。</div>';
-  else if(active.length===0)html+='<div class="empty">当前研究方向「'+esc(curF)+'」下暂无论文。点「恢复推荐论文」载入更多，或切换研究方向。</div>';
+  else if(active.length===0)html+='<div class="empty">当前研究方向「'+esc(curF2)+'」下暂无论文。点「恢复推荐论文」载入更多，或切换研究方向。</div>';
   else active.slice().reverse().forEach(p=>{
     html+=renderPaperCard(p,false);
   });
