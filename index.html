@@ -797,7 +797,7 @@ function renderSchedule(){
     +'<label class="fld">版本<input type="number" id="f_ver" value="1"></label></div>'
     +'<div class="form-row"><label class="fld">进度(%)<input type="number" id="f_prog" value="0" min="0" max="100"></label>'
     +'<label class="fld">撰写天数<input type="number" id="f_days" value="0"></label>'
-    +'<label class="fld">情况<select id="f_status">'+STATUS_OPTS.map(o=>'<option>'+o+'</option>').join('')+'</select></label></div>'
+    +'<label class="fld">情况<select id="f_status">'+STATUS_OPTS.map(o=>'<option value="'+o+'">'+o+'</option>').join('')+'</select></label></div>'
     +'<button class="btn primary" onclick="addFtbz()">添加论文</button></div>';
   if(ftbz.length===0)html+='<div class="empty">还没有进行中的论文，点 ＋ 添加。</div>';
   ftbz.forEach(p=>{
@@ -819,8 +819,8 @@ function renderSchedule(){
     +'<button class="icon-btn" title="历史" onclick="showHistory(\'goal\')">'+ICON.clock+'</button></div></div>';
   html+='<div class="form-box" id="goalForm">'
     +'<div class="form-row"><label class="fld">目标名称<input id="g_name" placeholder="如：每天阅读1篇顶刊"></label>'
-    +'<label class="fld">分类<select id="g_cat">'+GOAL_CATS.map(o=>'<option>'+o+'</option>').join('')+'</select></label></div>'
-    +'<div class="form-row"><label class="fld">周期<select id="g_cycle">'+CYCLE_OPTS.map(o=>'<option>'+o+'</option>').join('')+'</select></label>'
+    +'<label class="fld">分类<select id="g_cat">'+GOAL_CATS.map(o=>'<option value="'+o+'">'+o+'</option>').join('')+'</select></label></div>'
+    +'<div class="form-row"><label class="fld">周期<select id="g_cycle">'+CYCLE_OPTS.map(o=>'<option value="'+o+'">'+o+'</option>').join('')+'</select></label>'
     +'<label class="fld">次数/期<input type="number" id="g_target" value="1" min="1"></label></div>'
     +'<button class="btn primary" onclick="addGoal()">添加目标</button></div>';
   if(goals.length===0)html+='<div class="empty">还没有循环目标。</div>';
@@ -843,7 +843,7 @@ function renderSchedule(){
     +'<div class="form-row"><label class="fld">待办名称<input id="td_name"></label>'
     +'<label class="fld">分类<input id="td_cat" placeholder="科研/课题/生活"></label></div>'
     +'<div class="form-row"><label class="fld">截止日期<input type="date" id="td_ddl"></label>'
-    +'<label class="fld">重要程度<select id="td_imp">'+IMPORT_OPTS.map(o=>'<option>'+o+'</option>').join('')+'</select></label></div>'
+    +'<label class="fld">重要程度<select id="td_imp">'+IMPORT_OPTS.map(o=>'<option value="'+o+'">'+o+'</option>').join('')+'</select></label></div>'
     +'<button class="btn primary" onclick="addTodo()">添加待办</button></div>';
   const tToday=todayStr();
   const tlist=todos.filter(t=>!t.done || (t.done && t.doneAt && dateStr(new Date(t.doneAt))===tToday));
@@ -856,7 +856,7 @@ function renderSchedule(){
       +'<div class="todo-meta">'
       +'<input class="mini" value="'+esc(t.category||'')+'" placeholder="分类" onchange="updTodo(\''+t.id+'\',\'category\',this.value)">'
       +'<input class="mini" type="date" value="'+(t.ddl||'')+'" onchange="updTodo(\''+t.id+'\',\'ddl\',this.value)">'
-      +'<select class="mini" onchange="updTodo(\''+t.id+'\',\'importance\',this.value)">'+IMPORT_OPTS.map(o=>'<option'+(o===t.importance?' selected':'')+'>'+o+'</option>').join('')+'</select>'
+      +'<select class="mini" onchange="updTodo(\''+t.id+'\',\'importance\',this.value)">'+IMPORT_OPTS.map(o=>'<option value="'+o+'"'+(o===t.importance?' selected':'')+'>'+o+'</option>').join('')+'</select>'
       +'<span class="imp '+t.importance+'">'+t.importance+'</span>'
       +'</div></div></div>';
   });
@@ -915,8 +915,7 @@ function addTodo(){
 }
 function updTodo(id,f,v){
   const t=todos.find(x=>x.id===id);if(!t)return;
-  t[f]=v;save('todos',todos);
-}
+  t[f]=v;save('todos',todos); if(curView==='home')renderHome(); else if(curView==='schedule')renderSchedule(); }
 function toggleTodo(id){
   const t=todos.find(x=>x.id===id);if(!t)return;
   t.done=!t.done;t.doneAt=t.done?Date.now():null;
